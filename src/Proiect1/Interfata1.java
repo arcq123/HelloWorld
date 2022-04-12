@@ -12,7 +12,7 @@ class Gui1 extends JFrame{
 	private static final long serialVersionUID = 1L;
 	
 	Gui1(){
-		setTitle("Miro e colegul meu :)");
+		setTitle("Interfata nr. 1 :)");
 		setBounds(800,300,400,300);
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -37,10 +37,15 @@ class Gui1 extends JFrame{
 		
 		JTextField txt = new JTextField(" Text: "); 
 		txt.setEditable(true);
+		txt.setBounds(60,100,100,20);
+		getContentPane().add(txt);
+		txt.setVisible(true);
+		
+		JTextField txt2 = new JTextField(" Text: "); 
+		txt.setEditable(true);
 		txt.setBounds(60,30,250,20);
 		getContentPane().add(txt);
 		txt.setVisible(false);
-		
 		
 	//	n.setVisible();
 		setVisible(true);
