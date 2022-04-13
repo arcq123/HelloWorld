@@ -1,16 +1,16 @@
-package Proiect1;
+package MQTT;
 import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 
-class Gui2 extends JFrame{
+class Main extends JFrame{
 	
 
 	private static final long serialVersionUID = 1L;
 	
-	Gui2(){
-		setTitle("Interfata nr. 2 :)");
+	Main(){
+		setTitle("Main Application");
 		setBounds(800,300,900,400);
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -28,46 +28,132 @@ class Gui2 extends JFrame{
 //		getContentPane().add(p);
 //		p.setVisible(true); //si aici
 		
-		JButton b = new JButton("Log out"); 
-		b.setBounds(250, 30, 80, 20);
-		getContentPane().add(b);
-		b.setVisible(true);
+		JButton logOut_button = new JButton("Log out"); 
+		logOut_button.setBounds(250, 30, 80, 20);
+		getContentPane().add(logOut_button);
+		logOut_button.setVisible(true);
 		
-		JButton b2 = new JButton("Topic nou. "); 
-		b2.setBounds(250, 70, 110, 20);
-		getContentPane().add(b2);
-		b2.setVisible(true);
+		JButton newTopic_button = new JButton("Topic nou. "); 
+		newTopic_button.setBounds(250, 70, 110, 20);
+		getContentPane().add(newTopic_button);
+		newTopic_button.setVisible(true);
 		
-		JButton b3 = new JButton("Topic abonat. "); 
-		b3.setBounds(250, 110, 130, 20);
-		getContentPane().add(b3);
-		b3.setVisible(true);
+		JButton subscribedTopic_button = new JButton("Topic abonat. "); 
+		subscribedTopic_button.setBounds(250, 110, 130, 20);
+		getContentPane().add(subscribedTopic_button);
+		subscribedTopic_button.setVisible(true);
 		
-		JButton b4 = new JButton("Write. "); 
-		b4.setBounds(370, 70, 100, 20);
-		getContentPane().add(b4);
-		b4.setVisible(true);
+		JButton write_button = new JButton("Write. "); 
+		write_button.setBounds(370, 70, 100, 20);
+		getContentPane().add(write_button);
+		write_button.setVisible(true);
 		
-		JButton b5 = new JButton("Read. "); 
-		b5.setBounds(480, 70, 100, 20);
-		getContentPane().add(b5);
-		b5.setVisible(true);
+		JButton read_button = new JButton("Read. "); 
+		read_button.setBounds(480, 70, 100, 20);
+		getContentPane().add(read_button);
+		read_button.setVisible(true);
 		
-		JButton b6 = new JButton("Subscribe. "); 
-		b6.setBounds(590, 70, 100, 20);
-		getContentPane().add(b6);
-		b6.setVisible(true);
+		JButton susbscribe_button = new JButton("Subscribe. "); 
+		susbscribe_button.setBounds(590, 70, 100, 20);
+		getContentPane().add(susbscribe_button);
+		susbscribe_button.setVisible(true);
 		
 		
-		JButton b8 = new JButton("Unsubscribe. "); 
-		b8.setBounds(390, 110, 130, 20);
-		getContentPane().add(b8);
-		b8.setVisible(true);
+		JButton unsusbscribe_button = new JButton("Unsubscribe. "); 
+		unsusbscribe_button.setBounds(390, 110, 130, 20);
+		getContentPane().add(unsusbscribe_button);
+		unsusbscribe_button.setVisible(true);package MQTT;
+		import java.awt.Color;
+		import javax.swing.JButton;
+		import javax.swing.JFrame;
+		import javax.swing.JTextField;
+
+		class Main extends JFrame{
+			
+
+			private static final long serialVersionUID = 1L;
+			
+			Main(){
+				setTitle("Main Application");
+				setBounds(800,300,900,400);
+				
+				setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				getContentPane().setBackground((new Color(100,200,225)));
+				
+				JTextField n = new JTextField(" Text Topic: "); 
+				n.setEditable(true);
+				n.setBounds(20,20,200,200);
+				getContentPane().add(n);
+				n.setVisible(true); //aici trebuie true
+				
+//				JTextField p = new JTextField(" Password: "); 
+//				p.setEditable(true);
+//				p.setBounds(150,30,70,20);
+//				getContentPane().add(p);
+//				p.setVisible(true); //si aici
+				
+				JButton logOut_button = new JButton("Log out"); 
+				logOut_button.setBounds(250, 30, 80, 20);
+				getContentPane().add(logOut_button);
+				logOut_button.setVisible(true);
+				
+				JButton newTopic_button = new JButton("Topic nou. "); 
+				newTopic_button.setBounds(250, 70, 110, 20);
+				getContentPane().add(newTopic_button);
+				newTopic_button.setVisible(true);
+				
+				JButton subscribedTopic_button = new JButton("Topic abonat. "); 
+				subscribedTopic_button.setBounds(250, 110, 130, 20);
+				getContentPane().add(subscribedTopic_button);
+				subscribedTopic_button.setVisible(true);
+				
+				JButton write_button = new JButton("Write. "); 
+				write_button.setBounds(370, 70, 100, 20);
+				getContentPane().add(write_button);
+				write_button.setVisible(true);
+				
+				JButton read_button = new JButton("Read. "); 
+				read_button.setBounds(480, 70, 100, 20);
+				getContentPane().add(read_button);
+				read_button.setVisible(true);
+				
+				JButton susbscribe_button = new JButton("Subscribe. "); 
+				susbscribe_button.setBounds(590, 70, 100, 20);
+				getContentPane().add(susbscribe_button);
+				susbscribe_button.setVisible(true);
+				
+				
+				JButton unsusbscribe_button = new JButton("Unsubscribe. "); 
+				unsusbscribe_button.setBounds(390, 110, 130, 20);
+				getContentPane().add(unsusbscribe_button);
+				unsusbscribe_button.setVisible(true);
+				
+				JButton noName = new JButton("????"); 
+				noName.setBounds(390, 110, 100, 20);
+				getContentPane().add(noName);
+				noName.setVisible(false);
+				
+			//	n.setVisible();
+				setVisible(true);
+			}
+			
+			
+
+		}
+			public class Main_Interface {
+				
+			
+			public static void main(String[] args) {
+				new Main();
+
+			}
+
+		}
 		
-		JButton b7 = new JButton("Unsubscribe. "); 
-		b7.setBounds(390, 110, 100, 20);
-		getContentPane().add(b7);
-		b7.setVisible(false);
+		JButton noName = new JButton("????"); 
+		noName.setBounds(390, 110, 100, 20);
+		getContentPane().add(noName);
+		noName.setVisible(false);
 		
 	//	n.setVisible();
 		setVisible(true);
@@ -76,11 +162,11 @@ class Gui2 extends JFrame{
 	
 
 }
-	public class Interfata2 {
+	public class Main_Interface {
 		
 	
 	public static void main(String[] args) {
-		new Gui2();
+		new Main();
 
 	}
 

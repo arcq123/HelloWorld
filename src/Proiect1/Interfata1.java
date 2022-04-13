@@ -1,45 +1,66 @@
-package Proiect1;
+package MQTT;
 
 import java.awt.Color;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-class Gui1 extends JFrame{
+class LogIn extends JFrame{
 	
 
 	private static final long serialVersionUID = 1L;
 	
-	Gui1(){
-		setTitle("Interfata nr. 1 :)");
+	LogIn(){
+		setTitle("Log In");
 		setBounds(800,300,400,300);
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getContentPane().setBackground((new Color(100,200,225)));
 		
-		JTextField n = new JTextField(" Nickname: "); 
-		n.setEditable(true);
-		n.setBounds(60,30,70,20);
-		getContentPane().add(n);
-		n.setVisible(true); //aici trebuie true
+		final JTextField nickname = new JTextField(" Nickname: "); 
+		nickname.setEditable(true);
+		nickname.setBounds(60,30,70,20);
+		getContentPane().add(nickname);
+		nickname.setVisible(true); //aici trebuie true
+		nickname.addMouseListener(new MouseAdapter(){
+			public void mouseClicked(MouseEvent e){
+				nickname.setText("");
+				}
+		});
 		
-		JTextField p = new JTextField(" Password: "); 
-		p.setEditable(true);
-		p.setBounds(150,30,70,20);
-		getContentPane().add(p);
-		p.setVisible(true); //si aici
+		final JTextField password = new JTextField(" Password: "); 
 		
-		JButton b = new JButton("Log in"); 
-		b.setBounds(250, 30, 80, 20);
-		getContentPane().add(b);
-		b.setVisible(true);
+		password.setEditable(true);
+		password.setBounds(150,30,70,20);
+		getContentPane().add(password);
+		password.setVisible(true); //si aici
+		password.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e)
+			{
+				//password.setText("");
+				password.setVisible(false);
+				JPasswordField password2 = new JPasswordField();
+				password.setEditable(true);
+				password2.setBounds(150,30,70,20);
+				getContentPane().add(password2);
+				password2.setVisible(true);
+			}
+		});
+		
+		JButton logIn_button = new JButton("Log in"); 
+		logIn_button.setBounds(250, 30, 80, 20);
+		getContentPane().add(logIn_button);
+		logIn_button.setVisible(true);
 		
 		JTextField txt = new JTextField(" Text: "); 
-		txt.setEditable(true);
+		txt.setEditable(false);
 		txt.setBounds(60,100,100,20);
 		getContentPane().add(txt);
-		txt.setVisible(true);
+		txt.setVisible(false);
 		
 		JTextField txt2 = new JTextField(" Text: "); 
 		txt.setEditable(true);
@@ -54,11 +75,11 @@ class Gui1 extends JFrame{
 	
 
 }
-	public class Interfata1 {
-		
-	
+public class LogIn_Interface
+
+	{		
 	public static void main(String[] args) {
-		new Gui1();
+		new LogIn();
 
 	}
 
